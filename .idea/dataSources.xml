@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="BDD_TaskMaker@taskmakerserver.database.windows.net" uuid="1330612b-644b-4404-925f-23aa618a826e">
+    <data-source source="LOCAL" name="BDD_TaskMaker@taskmakerserver.database.windows.net" uuid="eebda1b8-2aee-4b44-8e3c-8dd30750c8d3">
       <driver-ref>azure.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>

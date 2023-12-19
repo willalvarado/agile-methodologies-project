@@ -11,7 +11,7 @@ public class DBConnection {
 
     }
 
-    public void loadController(){
+    private void loadController(){
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException e) {
@@ -50,8 +50,69 @@ public class DBConnection {
 
         } catch (SQLException e) {
             e.fillInStackTrace();
-            System.out.println();
+            System.out.println("Error al obtener la lista de tareas");
         }
         return null;
     }
+
+    public void insertTask(String name, String description, Date date, Time hour, String status) {
+        loadController();
+        try (Connection connection = DriverManager.getConnection(URL))
+ {
+
+            // Construct the SQL INSERT statement with placeholders
+            String insertQuery = "INSERT INTO TASKS (name, description, date, hour, status) VALUES (?, ?, ?, ?, ?)";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                // Set the values for the placeholders
+                preparedStatement.setString(1, name);
+                preparedStatement.setString(2, description);
+                preparedStatement.setDate(3, date);
+                preparedStatement.setTime(4, hour);
+                preparedStatement.setString(5, status);
+
+                // Execute the INSERT statement
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Task inserted successfully");
+                } else {
+                    System.out.println("Error: Task not inserted");
+                }
+            }
+        } catch (SQLException e) {
+            e.fillInStackTrace();
+            System.out.println("Error al establecer la connexión para ingresar la tarea");
+        }
+    }
+
+
+
+
+    public void deleteTask(int id_task) {
+        loadController();
+        try (Connection connection = DriverManager.getConnection(URL))
+        {
+
+            // Construct the SQL INSERT statement with placeholders
+            String insertQuery = "DELETE FROM TASKS WHERE id_num = ?";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                // Set the values for the placeholders
+                preparedStatement.setInt(1, id_task);
+                // Execute the INSERT statement
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected > 0) {
+                    System.out.println("Task deleted successfully");
+                } else {
+                    System.out.println("Error: Task not deleted");
+                }
+            }
+        } catch (SQLException e) {
+            e.fillInStackTrace();
+            System.out.println("Error al establecer la connexión para ingresar la tarea");
+        }
+    }
+
+
 }
