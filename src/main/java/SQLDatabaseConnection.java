@@ -18,21 +18,15 @@ public class SQLDatabaseConnection {
         }
 
         String connectionUrl =
-                "jdbc:sqlserver://localhost:1433;"
-                        + "database=TASKMAKER;"
-                        + "user=user;"
-                        + "password=admin;"
-                        + "encrypt=false;"
-                        + "trustServerCertificate=true;"
-                        + "loginTimeout=5;";
+                "jdbc:sqlserver://taskmakerserver.database.windows.net:1433;database=BDD_TaskMaker;user=ricardo25sr@taskmakerserver;password=admin123*;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=3;";
 
         try (Connection connection = DriverManager.getConnection(connectionUrl);
              Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT NOMBRE FROM TAREAS")) {
+             ResultSet resultSet = statement.executeQuery("SELECT name FROM TASKS")) {
 
             // Print results from select statement
             while (resultSet.next()) {
-                String nombre = resultSet.getString("NOMBRE");
+                String nombre = resultSet.getString("name");
                 System.out.println(nombre);
             }
         } catch (SQLException e) {
