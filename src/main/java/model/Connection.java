@@ -1,2 +1,4 @@
-package model;public class Connection {
+package model;
+
+public class Connection {
 }

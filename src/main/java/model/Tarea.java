@@ -1,2 +1,5 @@
-package model;public class Tarea {
+package model;
+
+public class Tarea {
+
 }
