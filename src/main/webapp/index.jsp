@@ -12,7 +12,7 @@
 <!-- Agrega un script de redirección -->
 <script>
   // Redirige automáticamente a vistaListaTareas.jsp al cargar la página
-  window.location.href = "lista-tareas"
+  window.location.href = "login-controller"
 </script>
 </body>
 </html>
