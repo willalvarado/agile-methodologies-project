@@ -1,36 +1,22 @@
-import java.sql.Connection;
+import model.DBConnection;
+import model.Task;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 public class SQLDatabaseConnection {
 
     // Connect to your database.
     // Replace server name, username, and password with your credentials
     public static void main(String[] args) {
-        // Cargar el controlador JDBC
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            // Maneja la excepción de carga del controlador
-        }
 
-        String connectionUrl =
-                "jdbc:sqlserver://taskmakerserver.database.windows.net:1433;database=BDD_TaskMaker;user=ricardo25sr@taskmakerserver;password=admin123*;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=3;";
+        DBConnection connection = new DBConnection();
+        List<Task> tareas = connection.getTasks();
+        System.out.println(tareas.size());
+        System.out.println(tareas.get(1).getId());
 
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT name FROM TASKS")) {
-
-            // Print results from select statement
-            while (resultSet.next()) {
-                String nombre = resultSet.getString("name");
-                System.out.println(nombre);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }
