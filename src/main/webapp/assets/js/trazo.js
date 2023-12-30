@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const context = mainCanvas.getContext("2d");
 
 
-// Función para agregar un rectángulo con texto al lienzo
+
+// Función para cambiar el color a rojo
     const setRed = () => {
-
         context.strokeStyle = "#d90909";
-
     };
+//TODO aregar las otras funciones para los otros colores
 
+// Evento de escucha para el clic en el boton
+    const btnRed = document.getElementById("btn-red"); //aquí va el id
+    btnRed.addEventListener("click", setRed);//aqui la función que cambia el color
 
+//TODO aregar los otros eventos para los otros botones
 
-
-// Evento de escucha para el clic en el elemento de ancla
-    const btnRed = document.getElementById("btn-red");
-    btnRed.addEventListener("click", setRed);
 
 });
