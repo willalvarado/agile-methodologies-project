@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //Guardar el elemento y el contexto
     const mainCanvas = document.getElementById("main-canvas");
     const context = mainCanvas.getContext("2d");
-
+    context.strokeStyle = "#d909cf";
     let initialX;
     let initialY;
     let correccionX = 0;
@@ -13,32 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     correccionX = posicion.x;
     correccionY = posicion.y;
 
-
-// Función para agregar un rectángulo con texto al lienzo
-    const agregarRecuadro = () => {
-        // Puedes personalizar las propiedades del rectángulo (x, y, ancho, alto, color, etc.)
-        const recuadroX = 50;
-        const recuadroY = 50;
-        const recuadroAncho = 100;
-        const recuadroAlto = 50;
-
-        // Dibuja un rectángulo
-        context.beginPath();
-        context.rect(recuadroX, recuadroY, recuadroAncho, recuadroAlto);
-        context.fillStyle = "#FF0000"; // Color rojo, puedes cambiarlo
-        context.fill();
-
-        // Agrega texto al rectángulo
-        context.font = "14px Arial";
-        context.fillStyle = "#FFFFFF"; // Color blanco, puedes cambiarlo
-        context.fillText("Tarea 1", recuadroX + 10, recuadroY + 30);
-    };
-
     const dibujar = (cursorX, cursorY) => {
         context.beginPath();
         context.moveTo(initialX, initialY);
         context.lineWidth = 25;
-        context.strokeStyle = "#d909cf";
         context.lineCap = "round";
         context.lineJoin = "round";
         context.lineTo(cursorX, cursorY);
@@ -82,12 +60,5 @@ document.addEventListener("DOMContentLoaded", function () {
 //pantallas tactiles
     mainCanvas.addEventListener('touchstart', mouseDown);
     mainCanvas.addEventListener('touchend', mouseUp);
-
-
-// Evento de escucha para el clic en el elemento de ancla
-    const elementoAncla = document.getElementById("addTask");
-    elementoAncla.addEventListener("click", agregarRecuadro);
-
-
 
 });

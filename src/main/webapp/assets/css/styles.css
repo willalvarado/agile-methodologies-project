@@ -19,6 +19,57 @@ canvas {
 
 /********************************* Side Bar + ***************************/
 
+/********** BOTONES *********/
+
+/* Add this style for the buttons in the sub-menu */
+.sidebar .nav-list li .sub-menu button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%; /* Make buttons fill the entire width of the parent container */
+}
+
+.sidebar .nav-list li .sub-menu button:hover {
+  opacity: 1;
+}
+
+/* Optional: Style for the link-name class in buttons */
+.sidebar .nav-list li .sub-menu button.link-name {
+  font-size: 18px;
+  opacity: 1;
+}
+
+/* Optional: Style for the buttons in the closed sidebar state */
+.sidebar.close .nav-list li .sub-menu button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.close .nav-list li:hover .sub-menu button {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+
+
+/*******************/
+
+
+
+
+
+
+
 #menu-button {
 font-size: 32px;
   z-index: 6; /* Valor alto para asegurar que esté por encima de otros elementos */

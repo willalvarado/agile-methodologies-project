@@ -22,6 +22,16 @@
 
 <body>
 
+
+
+
+
+
+
+<script src="../assets/jsp/loadTasks.jsp"></script>
+
+
+
 <div class="sidebar close">
 
     <div class="logo">
@@ -43,9 +53,12 @@
 
             <ul class="sub-menu">
                 <li><a href="#" class="link-name">Colores</a></li>
-                <li><a href="#">Negro</a></li>
-                <li><a href="#">Azul</a></li>
-                <li><a href="#">Rojo</a></li>
+                <li><button>Negro</button></li>
+                <li><button>Azul</button></li>
+                <li><button id="btn-red">Rojo</button></li>
+                <li><button>Morado</button></li>
+                <li><button>Verde</button></li>
+                <li><button>Amarillo</button></li>
             </ul>
         </li>
 
@@ -60,9 +73,9 @@
 
             <ul class="sub-menu">
                 <li><a href="#" class="link-name">Trazo</a></li>
-                <li><a href="#">Pequeño</a></li>
-                <li><a href="#">Mediano</a></li>
-                <li><a href="#">Grande </a></li>
+                <li><button>Pequeño</button></li>
+                <li><button>Mediano</button></li>
+                <li><button>Grande</button></li>
             </ul>
         </li>
 
@@ -77,9 +90,9 @@
 
             <ul class="sub-menu">
                 <li><a href="#" class="link-name">Texto</a></li>
-                <li><a href="#">Pequeño</a></li>
-                <li><a href="#">Mediano</a></li>
-                <li><a href="#">Grande </a></li>
+                <li><button>Pequeño</button></li>
+                <li><button>Mediano</button></li>
+                <li><button>Grande</button></li>
             </ul>
         </li>
 
@@ -94,9 +107,9 @@
 
             <ul class="sub-menu">
                 <li><a href="#" class="link-name">Borrar</a></li>
-                <li><a href="#">Trazos</a></li>
-                <li><a href="#">Texto</a></li>
-                <li><a href="#">Todo </a></li>
+                <li><button>Borrador</button></li>
+                <li><button>BorrarTrazos</button></li>
+                <li><button>BorrarTodo</button></li>
             </ul>
         </li>
 
@@ -146,11 +159,10 @@
 </div>
 
 
-
 <div class="container">
     <input type="checkbox" id="btn-mas">
     <div class="redes">
-        <button id = "addTask" data-bs-toggle="modal" data-bs-target="#addTaskModal" class="fa fa-thumb-tack"></button>
+        <button id = "addTask"  class="fa fa-thumb-tack"></button>
         <button class="fa fa-commenting"></button>
     </div>
     <div class="btn-mas">
@@ -163,69 +175,10 @@
 
 
 
-
-
-
-
-<!-- Modal para agregar tarea -->
-<div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addTaskModalLabel">Agregar Tarea</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Formulario para agregar una nueva tarea -->
-                <form id="addTaskForm" action="/addtask-controller" method="post">
-                    <div class="mb-3">
-                        <label for="taskName" class="form-label">Nombre de la Tarea</label>
-                        <input type="text" class="form-control" id="taskName" name="taskName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="taskDescription" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="taskDescription" name="taskDescription"
-                                  rows="3"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="taskDate" class="form-label">Fecha</label>
-                        <input type="date" class="form-control" id="taskDate" name="taskDate" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="taskTime" class="form-label">Hora</label>
-                        <input type="time" class="form-control" id="taskTime" name="taskTime" required>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" form="addTaskForm">Agregar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Enlace a los scripts de Bootstrap (CDN) y jQuery (para modales) -->
-<script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-<script src="../assets/js/index.js"></script>
-<script src="../assets/js/app.js"></script>
+<script src="../assets/js/canva.js"></script>
+<script src="../assets/js/trazo.js"></script>
+<script src="../assets/js/sideBar.js"></script>
+<script src="../assets/js/addTask.js"></script>
 </body>
 
 </html>

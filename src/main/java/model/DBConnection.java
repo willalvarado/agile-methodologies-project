@@ -21,7 +21,7 @@ public class DBConnection {
     }
 
     public List<Task> getTasks() {
-
+/*
         loadController();
         try (Connection connection = DriverManager.getConnection(URL);
              Statement statement = connection.createStatement();
@@ -37,9 +37,10 @@ public class DBConnection {
             e.fillInStackTrace();
             System.out.println("Error al obtener la lista de tareas");
         }
-
+*/
         List<Task> tasks = new ArrayList<>();
         tasks.add((new Task(1,"tarea 11","descipción 11", new Date(1,1,1), Time.valueOf("10:00:00"), "activa")));
+        tasks.add((new Task(2,"tarea 12","descipción 12", new Date(1,1,1), Time.valueOf("10:00:00"), "activa")));
         return tasks;
     }
 
