@@ -11,7 +11,7 @@
 <body>
 <!-- Agrega un script de redirección -->
 <script>
-  // Redirige automáticamente a vistaListaTareas.jsp al cargar la página
+  // Redirige automáticamente a vistaListaTareas2.jsp al cargar la página
   window.location.href = "login-controller"
 </script>
 </body>

@@ -336,20 +336,21 @@ font-size: 32px;
 
 
 /********************************* MENU + ***************************/
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-#btn-mas{
+#btn-mas {
   display: none;
 }
-.container{
+.container {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
-.redes a, .btn-mas label{
+.redes button,
+.btn-mas label {
   display: block;
   text-decoration: none;
   background: #D80032;
@@ -359,32 +360,38 @@ font-size: 32px;
   line-height: 55px;
   text-align: center;
   border-radius: 50%;
-  box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
   transition: all 500ms ease;
+  border: none; /* Añadido para quitar el borde de los botones */
+  cursor: pointer;
+  margin-bottom: 10px; /* Añadido para igualar el espacio entre los botones */
 }
-.redes a:hover{
+
+.redes button:hover {
   background: #fff;
   color: #D80032;
 }
-.redes a{
-  margin-bottom: -15px;
+
+.redes button {
   opacity: 0;
   visibility: hidden;
 }
-#btn-mas:checked~ .redes a{
-  margin-bottom: 10px;
+
+#btn-mas:checked ~ .redes button {
   opacity: 1;
   visibility: visible;
 }
-.btn-mas label{
+
+.btn-mas label {
   cursor: pointer;
-  background: #D80032;
   font-size: 23px;
 }
-#btn-mas:checked ~ .btn-mas label{
+
+#btn-mas:checked ~ .btn-mas label {
   transform: rotate(135deg);
   font-size: 25px;
 }
+
 
 /********************************* ctrlZY ***************************/
 .ctrlZY{
