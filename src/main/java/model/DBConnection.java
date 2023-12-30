@@ -30,21 +30,6 @@ public class DBConnection {
             // Print results from select statement
             while (resultSet.next()) {
                 tasks.add(new Task(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getDate(4),resultSet.getTime(5),resultSet.getString(6)));
-
-/*
-                tasks.forEach(s->System.out.println(s.id + " "
-                        + s.name + " "
-                        + s.description
-                        + s.date + " "
-                        + s.time + " "
-                        + s.status
-                ));
-
-                System.out.println(resultSet.getString(1) + " "
-                        + resultSet.getString(2) + " "
-                        + resultSet.getString(3)  + " "
-                        + resultSet.getString(4)  + " "
-                        + resultSet.getString(5));*/
             }
             return tasks;
 
@@ -52,7 +37,10 @@ public class DBConnection {
             e.fillInStackTrace();
             System.out.println("Error al obtener la lista de tareas");
         }
-        return null;
+
+        List<Task> tasks = new ArrayList<>();
+        tasks.add((new Task(1,"tarea 11","descipción 11", new Date(1,1,1), Time.valueOf("10:00:00"), "activa")));
+        return tasks;
     }
 
     public void insertTask(String name, String description, Date date, Time hour, String status) {
