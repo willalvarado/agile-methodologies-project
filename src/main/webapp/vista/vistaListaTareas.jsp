@@ -54,12 +54,14 @@
             <ul class="sub-menu">
                 <li><a href="#" class="link-name">Colores</a></li>
                 <!-- TODO  Asignar un id a los botones y agregar la funcion en assets/js/trazo.js-->
-                <li><button>Negro</button></li>
-                <li><button>Azul</button></li>
-                <li><button id="btn-red">Rojo</button></li>
-                <li><button>Morado</button></li>
-                <li><button>Verde</button></li>
-                <li><button>Amarillo</button></li>
+             <li><button id="btn-negro">Negro</button></li>
+             <li><button id="btn-blue">Azul</button></li>
+             <li><button id="btn-red">Rojo</button></li>
+             <li><button id="btn-purple">Morado</button></li>
+             <li><button id="btn-green">Verde</button></li>
+             <li><button id="btn-yellow">Amarillo</button></li>
+
+               
             </ul>
         </li>
 
